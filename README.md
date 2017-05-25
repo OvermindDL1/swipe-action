@@ -1,9 +1,8 @@
 # swipe-action
 
-[![GitHub version](https://badge.fury.io/gh/vguillou%2Fswipe-action.svg)](https://badge.fury.io/gh/vguillou%2Fswipe-action)
-
 _A Polymer element providing a declarative way to swipe DOM elements with configurable underlays and trigger some action when the swiping is done. Integrates seamlessly with the <iron-list> element._
 
+![Demonstration](demo/swipe-action.gif)
 <img src="https://github.com/vguillou/swipe-action/blob/master/res/swipe-action.gif" width="300">
 
 ## Use it in your project :
