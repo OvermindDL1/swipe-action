@@ -12,7 +12,7 @@ Example:
         <p>I am the item that can be swiped horizontally (left and right)</p>
       </paper-material>
 
-      <div swipe-left-action swipe-right-action on-tap="onActionTaped">
+      <div slot="action" swipe-left-action swipe-right-action on-tap="onActionTaped">
         <p>I am the underlay that will be display when the item will be swiped left or right</p>
       </div>
     </swipe-action>
@@ -26,7 +26,7 @@ Example with &lt;iron-list&gt;:
             <p>I am the item that can be swiped horizontally (left and right)</p>
           </paper-material>
 
-          <div swipe-left-action swipe-right-action on-tap="onActionTaped">
+          <div slot="action" swipe-left-action swipe-right-action on-tap="onActionTaped">
             <p>I am the underlay that will be display when the item will be swiped left or right</p>
           </div>
         </swipe-action>
@@ -75,7 +75,7 @@ Attribute | Description | Default
         z-index: 1001;
       }
 
-      :host > ::content > * {
+      :host > ::slotted(*) {
         position: absolute;
         box-sizing: border-box;
         top: 0;
@@ -85,12 +85,12 @@ Attribute | Description | Default
         height: 100%;
       }
 
-      ::content > [swipe-left-action] {visibility: hidden;}
-      ::content > [swipe-right-action] {visibility: hidden;}
-      ::content > [swipe-up-action] {visibility: hidden;}
-      ::content > [swipe-down-action] {visibility: hidden;}
+      ::slotted([swipe-left-action]) {visibility: hidden;}
+      ::slotted([swipe-right-action]) {visibility: hidden;}
+      ::slotted([swipe-up-action]) {visibility: hidden;}
+      ::slotted([swipe-down-action]) {visibility: hidden;}
 
-      ::content > .visible-action {
+      ::slotted(.visible-action) {
         visibility: visible;
       }
 
@@ -113,10 +113,10 @@ Attribute | Description | Default
       }
     </style>
 
-    <content id="actions" select="[swipe-left-action],[swipe-right-action],[swipe-up-action],[swipe-down-action]"></content>
+    <slot id="actions" name="action"></slot>
     
     <div id="swipeTarget">
-      <content id="content" select="*"></content>
+      <slot id="content"></slot>
     </div>
 
   </template>
